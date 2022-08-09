@@ -1,5 +1,5 @@
 import logo from "../../../assets/Logo.png";
-import { HeaderLink, HeaderWrapper, Links, Logo, LogoLink } from "./style";
+import { HeaderLink, HeaderWrapper, Links, Logo, LogoLink } from "./styles";
 
 export const Header = () => {
   return (

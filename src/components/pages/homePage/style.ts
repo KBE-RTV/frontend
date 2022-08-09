@@ -1,5 +1,4 @@
 import styled from "styled-components";
-import { Grid } from "@mui/material";
 
 interface BackgroundImageProps {
   url?: string;
@@ -14,4 +13,11 @@ export const BackgroundImageWrapper = styled.div<BackgroundImageProps>`
   display: flex;
   flex-direction: column;
   justify-content: center;
+  scroll-snap-align: start;
+`;
+
+export const HomePageContent = styled.div`
+  height: 100vh;
+  overflow-y: scroll;
+  scroll-snap-type: y mandatory;s
 `;

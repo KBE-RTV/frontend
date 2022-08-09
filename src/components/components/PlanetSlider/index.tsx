@@ -1,7 +1,7 @@
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import { PlanetImg, SliderWrapper } from "./style";
+import { PlanetImg, SliderWrapper } from "./styles";
 
 import ceres from "../../../assets/ceres.png";
 import earth from "../../../assets/earth.png";
@@ -17,7 +17,7 @@ import saturn from "../../../assets/saturn.png";
 import uranus from "../../../assets/uranus.png";
 import venus from "../../../assets/venus.png";
 
-export default function PlanetSlider() {
+export const PlanetSlider = () => {
   const slidersettings = {
     infinite: true,
     speed: 500,
