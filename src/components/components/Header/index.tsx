@@ -9,7 +9,7 @@ export const Header = () => {
       </LogoLink>
       <Links>
         <HeaderLink to="">CELESTIAL BODIES</HeaderLink>
-        <HeaderLink to="">PLANETARY SYSTEMS</HeaderLink>
+        <HeaderLink to="/planets">PLANETARY SYSTEMS</HeaderLink>
       </Links>
     </HeaderWrapper>
   );

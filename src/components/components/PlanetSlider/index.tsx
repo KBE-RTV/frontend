@@ -3,14 +3,10 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { PlanetImg, SliderWrapper } from "./styles";
 
-import ceres from "../../../assets/ceres.png";
 import earth from "../../../assets/earth.png";
-import eris from "../../../assets/eris.png";
 import jupiter from "../../../assets/jupiter.png";
-import makemake from "../../../assets/makemake.png";
 import mars from "../../../assets/mars.png";
 import mercury from "../../../assets/mercury.png";
-import moon from "../../../assets/moon.png";
 import neptune from "../../../assets/neptune.png";
 import pluto from "../../../assets/pluto.png";
 import saturn from "../../../assets/saturn.png";
@@ -29,28 +25,16 @@ export const PlanetSlider = () => {
     <SliderWrapper>
       <Slider {...slidersettings}>
         <div>
-          <PlanetImg src={ceres} />
-        </div>
-        <div>
           <PlanetImg src={earth} />
         </div>
         <div>
-          <PlanetImg src={eris} />
-        </div>
-        <div>
           <PlanetImg src={jupiter} />
-        </div>
-        <div>
-          <PlanetImg src={makemake} />
         </div>
         <div>
           <PlanetImg src={mars} />
         </div>
         <div>
           <PlanetImg src={mercury} />
-        </div>
-        <div>
-          <PlanetImg src={moon} />
         </div>
         <div>
           <PlanetImg src={neptune} />

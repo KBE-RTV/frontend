@@ -3,13 +3,12 @@ import styled from "styled-components";
 interface OrbitProperties {
   widthAndHeight: string;
   marginTopAndLeft: string;
-  speed?: string;
 }
 
 export const PlanetarySystemWrapper = styled.div`
   position: relative;
-  width: 780px;
-  height: 780px;
+  width: 480px;
+  height: 480px;
   margin: auto;
   overflow: hidden;
 `;
@@ -18,39 +17,24 @@ export const Sun = styled.div`
   position: absolute;
   top: 50%;
   left: 50%;
-  height: 200px;
-  width: 200px;
+  height: 30px;
+  width: 30px;
   background-color: #fae20a;
-  margin-top: -100px;
-  margin-left: -100px;
+  margin-top: -18px;
+  margin-left: -18px;
   border-radius: 50%;
-  box-shadow: 0 0 84px orange;
-  border-radius: 50%;
+  box-shadow: 0 0 15px rgb(255 255 255 / 80%);
 `;
 
-export const Earth = styled.img`
+export const Mercury = styled.div`
   position: absolute;
   top: 0;
   left: 50%;
-  height: 50px;
-  width: 50px;
-  margin-left: -25px;
-  margin-top: -25px;
-  border-radius: 50%;
-  box-shadow: 0 0 34px #3a4385;
-`;
-
-export const Moon = styled.div`
-  position: absolute;
-  top: 0;
-  left: 50%;
-  margin-top: -6px;
-  margin-left: -6px;
-  height: 12px;
-  width: 12px;
-  border-radius: 50%;
-  background: white;
-  box-shadow: 0 0 14px #3a4385;
+  margin-top: 9px;
+  margin-left: -24px;
+  height: 5px;
+  width: 5px;
+  background-color: #a1a1a1;
   border-radius: 50%;
 `;
 
@@ -58,37 +42,91 @@ export const Venus = styled.div`
   position: absolute;
   top: 0;
   left: 50%;
-  margin-top: -20px;
-  margin-left: -20px;
-  height: 40px;
-  width: 40px;
-  background-color: #3498db;
-  box-shadow: 0 0 34px #3a4385;
+  margin-top: 16px;
+  margin-left: 38px;
+  height: 12px;
+  width: 12px;
+  background-color: #f5cc96;
+  box-shadow: inset 0 0.4rem 0.8rem rgb(0 0 0 / 20%), inset 0 -0.4rem 0.4rem rgb(255 255 255 / 20%);
   border-radius: 50%;
 `;
 
-export const Mercury = styled.div`
+export const Earth = styled.div`
   position: absolute;
   top: 0;
   left: 50%;
-  margin-top: -13.5px;
-  margin-left: -13.5px;
-  height: 25px;
-  width: 25px;
-  background-color: #a65e22;
+  height: 12.7px;
+  width: 12.7px;
+  margin-left: -25px;
+  margin-top: -3px;
   border-radius: 50%;
+  background-color: #495391;
+  box-shadow: inset 0 0.4rem 0.8rem rgb(0 0 0 / 20%), inset 0 -0.4rem 0.4rem rgb(255 255 255 / 20%);
 `;
 
 export const Mars = styled.div`
   position: absolute;
   top: 0;
   left: 50%;
-  margin-top: -16px;
-  margin-left: -16px;
-  height: 32px;
-  width: 32px;
-  background-color: #863222;
-  box-shadow: 0 0 14px #a64232;
+  margin-top: 110px;
+  margin-left: 114px;
+  height: 6.7px;
+  width: 6.7px;
+  background-color: #b95730;
+  box-shadow: inset 0 0.4rem 0.8rem rgb(0 0 0 / 20%), inset 0 -0.4rem 0.4rem rgb(255 255 255 / 20%);
+  border-radius: 50%;
+`;
+
+export const Jupiter = styled.div`
+  position: absolute;
+  top: 0;
+  left: 50%;
+  margin-top: 142px;
+  margin-left: 125px;
+  height: 38.4px;
+  width:38.4px;
+  background-color: #d5ba8e;
+  box-shadow: inset 0 0.4rem 0.8rem rgb(0 0 0 / 20%), inset 0 -0.4rem 0.4rem rgb(255 255 255 / 20%);
+  border-radius: 50%;
+  z-index: 1;
+`;
+
+export const Saturn = styled.div`
+  position: absolute;
+  top: 0;
+  left: 50%;
+  margin-top: 3px;
+  margin-left: 54px;
+  height: 19.5px;
+  width: 19.5px;
+  background-color: #dab37a;
+  box-shadow: 0 0 0 0.1em #000, 0 0 0.1em 0.4em #8f6200, inset 0 0.4rem 0.8rem rgb(0 0 0 / 20%), inset 0 -0.4rem 0.4rem rgb(255 255 255 / 20%);
+  border-radius: 50%;
+`;
+
+export const Uranus = styled.div`
+  position: absolute;
+  top: 0;
+  left: 50%;
+  margin-top: 68px;
+  margin-left: -168px;
+  height: 18px;
+  width: 18px;
+  background-color: #c4eaed;
+  box-shadow: inset 0 0.4rem 0.8rem rgb(0 0 0 / 20%), inset 0 -0.4rem 0.4rem rgb(255 255 255 / 20%);
+  border-radius: 50%;
+`;
+
+export const Neptune = styled.div`
+  position: absolute;
+  top: 0;
+  left: 50%;
+  margin-top: 392px;
+  margin-left: -176px;
+  height: 17.5px;
+  width: 17.5px;
+  background-color: #6393e5;
+  box-shadow: inset 0 0.4rem 0.8rem rgb(0 0 0 / 20%), inset 0 -0.4rem 0.4rem rgb(255 255 255 / 20%);
   border-radius: 50%;
 `;
 
@@ -101,7 +139,6 @@ export const PlanetWrapper = styled.div<OrbitProperties>`
   height: ${(props) => props.widthAndHeight};
   margin-left: ${(props) => props.marginTopAndLeft};
   margin-top: ${(props) => props.marginTopAndLeft};
-  animation: spin-right ${props => props.speed} linear infinite;
 `;
 
 export const Orbit = styled.div<OrbitProperties>`

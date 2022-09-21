@@ -44,6 +44,6 @@ export const LogoLink = styled(NavLink)`
 `;
 
 export const Logo = styled.img`
-  height: 40px;
+  height: 30px;
   width: auto;
 `;

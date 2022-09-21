@@ -5,15 +5,19 @@ import { BrowserRouter as Router, Route, Routes } from "react-router-dom"
 import { Header } from "./components/components/Header";
 import { BrowserRouter } from "react-router-dom";
 import { HomePage } from "./components/pages/homePage";
+import { PlanetsPage } from "./components/pages/planetsPage";
 
 function App() {
   return (
     <Router>
       <div className="App">
-        <Header />
+        <div style={{display: "block"}}>
+          <Header />
+        </div>
         <div className="content">
           <Routes>
             <Route path="/" element={HomePage()} />
+            <Route path="/planets" element={PlanetsPage()} />
           </Routes>
         </div>
       </div>

@@ -1,48 +1,99 @@
-import {
-  Earth,
-  Mars,
-  Mercury,
-  Moon,
-  Orbit,
-  PlanetarySystemWrapper,
-  PlanetWrapper,
-  Sun,
-  Venus,
-} from "./styles";
-import "./styles.css";
+import { CelestialBody } from "../../../interfaces/interfaces";
+import { Earth, Jupiter, Mars, Mercury, Neptune, Orbit, PlanetarySystemWrapper, PlanetWrapper, Saturn, Sun, Uranus, Venus } from "./styles";
 
-export const PlanetarySystem = () => {
+interface CelestialBodyDataForPlanetarySystem {
+  celestialBodies: CelestialBody[];
+}
+
+export const PlanetarySystem = ({ celestialBodies }: CelestialBodyDataForPlanetarySystem) => {
+
+  const getCelestialBodyNames = () => {
+    const celestialBodyNames = [];
+    for (let i = 0; i < celestialBodies.length; i++) {
+      celestialBodyNames.push(celestialBodies[i].name);
+    }
+    return celestialBodyNames;
+  }
+
+  const celestialBodyNames = getCelestialBodyNames();
+
   return (
+
     <PlanetarySystemWrapper>
       <Sun />
 
-      <Orbit widthAndHeight="280px" marginTopAndLeft="-140px" />
-      <PlanetWrapper widthAndHeight="280px" marginTopAndLeft="-140px" speed="8.8s">
-        <Mercury />
-      </PlanetWrapper>
+      {celestialBodyNames.includes("Mercury") &&
+        <>
+          <Orbit widthAndHeight="55px" marginTopAndLeft="-32px" />
+          <PlanetWrapper widthAndHeight="55px" marginTopAndLeft="-32px">
+            <Mercury />
+          </PlanetWrapper>
+        </>
+      }
 
-      <Orbit widthAndHeight="370px" marginTopAndLeft="-185px" />
-      <PlanetWrapper widthAndHeight="370px" marginTopAndLeft="-185px" speed="22s">
-        <Venus />
-      </PlanetWrapper>
+      {celestialBodyNames.includes("Venus") &&
+        <>
+          <Orbit widthAndHeight="110px" marginTopAndLeft="-60px" />
+          <PlanetWrapper widthAndHeight="110px" marginTopAndLeft="-60px">
+            <Venus />
+          </PlanetWrapper>
+        </>
+      }
 
-      <Orbit widthAndHeight="500px" marginTopAndLeft="-250px" />
-      <PlanetWrapper widthAndHeight="500px" marginTopAndLeft="-250px" speed="36.5s">
-        <Orbit widthAndHeight="90px" marginTopAndLeft="-45px" style={{top: 0}}/>
-        <PlanetWrapper widthAndHeight="90px" marginTopAndLeft="-45px" speed="3s" style={{top: 0}}>
-          <Moon />
-        </PlanetWrapper>
+      {celestialBodyNames.includes("Earth") &&
+        <>
+          <Orbit widthAndHeight="170px" marginTopAndLeft="-90px" />
+          <PlanetWrapper widthAndHeight="170px" marginTopAndLeft="-90px">
+            <Earth />
+          </PlanetWrapper>
+        </>
+      }
 
-        <Earth
-          src="https://raw.githubusercontent.com/everdimension-personal/codepen-assets/master/earth_small_150.jpg"
-          alt="earth"
-        />
-      </PlanetWrapper>
+      {celestialBodyNames.includes("Mars") &&
+        <>
+          <Orbit widthAndHeight="230px" marginTopAndLeft="-120px" />
+          <PlanetWrapper widthAndHeight="230px" marginTopAndLeft="-120px">
+            <Mars />
+          </PlanetWrapper>
+        </>
+      }
 
-      <Orbit widthAndHeight="700px" marginTopAndLeft="-350px" />
-      <PlanetWrapper widthAndHeight="700px" marginTopAndLeft="-350px" speed="68.7s">
-        <Mars />
-      </PlanetWrapper>
+      {celestialBodyNames.includes("Jupiter") &&
+        <>
+          <Orbit widthAndHeight="290px" marginTopAndLeft="-150px" />
+          <PlanetWrapper widthAndHeight="290px" marginTopAndLeft="-150px">
+            <Jupiter />
+          </PlanetWrapper>
+        </>
+      }
+
+      {celestialBodyNames.includes("Saturn") &&
+        <>
+          <Orbit widthAndHeight="350px" marginTopAndLeft="-180px" />
+          <PlanetWrapper widthAndHeight="350px" marginTopAndLeft="-180px">
+            <Saturn />
+          </PlanetWrapper>
+        </>
+      }
+
+      {celestialBodyNames.includes("Uranus") &&
+        <>
+          <Orbit widthAndHeight="410px" marginTopAndLeft="-210px" />
+          <PlanetWrapper widthAndHeight="410px" marginTopAndLeft="-210px">
+            <Uranus />
+          </PlanetWrapper>
+        </>
+      }
+
+      {celestialBodyNames.includes("Neptune") &&
+        <>
+          <Orbit widthAndHeight="470px" marginTopAndLeft="-240px" />
+          <PlanetWrapper widthAndHeight="470px" marginTopAndLeft="-240px">
+            <Neptune />
+          </PlanetWrapper>
+        </>
+      }
+
     </PlanetarySystemWrapper>
   );
 };

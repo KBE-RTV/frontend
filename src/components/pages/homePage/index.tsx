@@ -5,6 +5,9 @@ import { PlanetSlider } from "../../components/PlanetSlider";
 import { PlanetarySystem } from "../../components/PlaneterySystem";
 
 export const HomePage = () => {
+  
+  const celestialBodies = [{"name":"Sun"},{"name":"Mercury"},{"name":"Venus"},{"name":"Earth"},{"name":"Mars"},{"name":"Jupiter"},{"name":"Saturn"},{"name":"Uranus"},{"name":"Neptune"}];
+  
   return (
     <HomePageContent>
       <BackgroundImageWrapper url={startpageintro} />
@@ -12,7 +15,7 @@ export const HomePage = () => {
         <PlanetSlider />
       </BackgroundImageWrapper>
       <BackgroundImageWrapper>
-        <PlanetarySystem />
+        <PlanetarySystem celestialBodies={celestialBodies} />
       </BackgroundImageWrapper>
     </HomePageContent>
   );
