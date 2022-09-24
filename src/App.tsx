@@ -6,40 +6,25 @@ import { Header } from "./components/components/Header";
 import { BrowserRouter } from "react-router-dom";
 import { HomePage } from "./components/pages/homePage";
 import { PlanetsPage } from "./components/pages/planetsPage";
+import { CelestialBodiesPage } from "./components/pages/celestialbodiesPage";
+import { RecoilRoot } from "recoil";
 
 function App() {
   return (
-    <Router>
-      <div className="App">
-        <div style={{display: "block"}}>
-          <Header />
+      <Router>
+        <div className="App">
+          <div style={{display: "block"}}>
+            <Header />
+          </div>
+          <div className="content">
+            <Routes>
+              <Route path="/" element={HomePage()} />
+              <Route path="/celestialbodies" element={CelestialBodiesPage()} />
+              <Route path="/planets" element={PlanetsPage()} />
+            </Routes>
+          </div>
         </div>
-        <div className="content">
-          <Routes>
-            <Route path="/" element={HomePage()} />
-            <Route path="/planets" element={PlanetsPage()} />
-          </Routes>
-        </div>
-      </div>
-    </Router>
-    /*
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-    */
+      </Router>
   );
 }
 

@@ -88,7 +88,6 @@ export const Jupiter = styled.div`
   background-color: #d5ba8e;
   box-shadow: inset 0 0.4rem 0.8rem rgb(0 0 0 / 20%), inset 0 -0.4rem 0.4rem rgb(255 255 255 / 20%);
   border-radius: 50%;
-  z-index: 1;
 `;
 
 export const Saturn = styled.div`
