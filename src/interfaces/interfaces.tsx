@@ -21,3 +21,5 @@ export interface PlanetarySystem {
     owner: string;
     price: number;
 }
+
+export type Currency = "€" | "$" | "£" | "₺" | "¥";

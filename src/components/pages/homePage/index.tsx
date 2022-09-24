@@ -2,7 +2,7 @@ import { BackgroundImageWrapper, HomePageContent } from "./style";
 import startpageintro from "../../../assets/StartpageIntro.png";
 import startpageintroCelestialBodies from "../../../assets/StartpageIntroComponents.png";
 import { PlanetSlider } from "../../components/PlanetSlider";
-import { PlanetarySystem } from "../../components/PlaneterySystem";
+import { PlanetarySystemGraphic } from "../../components/PlaneterySystemGraphic";
 
 export const HomePage = () => {
   
@@ -15,7 +15,7 @@ export const HomePage = () => {
         <PlanetSlider />
       </BackgroundImageWrapper>
       <BackgroundImageWrapper>
-        <PlanetarySystem celestialBodies={celestialBodies} />
+        <PlanetarySystemGraphic celestialBodies={celestialBodies} />
       </BackgroundImageWrapper>
     </HomePageContent>
   );

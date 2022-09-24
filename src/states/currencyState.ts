@@ -1,6 +1,5 @@
 import { atom, selector } from "recoil";
-
-type Currency = "€" | "$" | "£" | "₺" | "¥";
+import { Currency } from "../interfaces/interfaces";
 
 export const currencyState = atom<Currency>({
     key: "currencyState",

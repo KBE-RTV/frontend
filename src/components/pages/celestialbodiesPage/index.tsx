@@ -1,6 +1,5 @@
 import { HomePageContent, ProductContainer } from "./style";
 import { useEffect, useState } from "react";
-import { getProducts } from "../../../services/apicalls";
 import { PlanetarySystem } from "../../../interfaces/interfaces";
 import { PlanetarySystemOverviewElement } from "../../components/PlanetarySystemOverviewElement";
 

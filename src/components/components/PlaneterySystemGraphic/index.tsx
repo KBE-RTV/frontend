@@ -5,7 +5,7 @@ interface CelestialBodyDataForPlanetarySystem {
   celestialBodies: CelestialBody[];
 }
 
-export const PlanetarySystem = ({ celestialBodies }: CelestialBodyDataForPlanetarySystem) => {
+export const PlanetarySystemGraphic = ({ celestialBodies }: CelestialBodyDataForPlanetarySystem) => {
 
   const getCelestialBodyNames = () => {
     const celestialBodyNames = [];

@@ -16,22 +16,16 @@ export const PlanetarySystemGraphicContainer = styled.div`
 
 export const PlanetarySystemInfoContainer = styled.div`
     flex: 0 0 40%;
-    padding-top: 30px;
-    padding-bottom: 30px;
+    padding-top: 40px;
+    padding-bottom: 40px;
     display: flex;
     flex-direction: column;
 `;
 
 export const PlanetarySystemName = styled.h2`
     text-align: left;
-    text-transform: uppercase
-`;
-
-export const CelestialBodyName = styled.p`
-    text-align: left;
-    padding-left: 10px;
-    margin-top: 10px;
-    margin-bottom: 10px;
+    text-transform: uppercase;
+    font-size: 40px;
 `;
 
 export const PlanetarySystemPriceContainer = styled.div`
@@ -49,13 +43,14 @@ export const PlanetarySystemPrice = styled.p`
 
 export const MoreDetailsButton = styled.button`
     color: #3A7FBE;
-    font-size: 50px;
-    background:none;
-    border:none;
-    margin:0;
-    padding: 20px 20px 0 0;
+    border: 2px solid #3A7FBE;
+    font-size: 15px;
+    background: none;
+    margin: 20px 20px 20px 4px;
+    padding: 10px;
     cursor: pointer;
     align-self: flex-start;
+    text-transform: uppercase;
 
     &:hover {
         color: #7db4e8;

@@ -1,6 +1,14 @@
-export const getProducts = async () => {
-    const response = await fetch('http://localhost:8086/convertcurrencies', {
-        method: 'GET',
-      })
-    return await response.json();
+import { PlanetarySystem } from "../interfaces/interfaces";
+
+export const getPlanetarySystems = () => {
+  return fetch('/getproducttest', {
+    method: 'GET',
+  })
+    .then(res => res.json())
+    .then(
+      (result) => {
+        console.log("all planetary systems", result);
+        return result.planetarySystems;
+      },
+    )
 }

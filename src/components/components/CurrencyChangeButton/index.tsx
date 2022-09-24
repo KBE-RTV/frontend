@@ -11,8 +11,7 @@ import MenuList from '@mui/material/MenuList';
 import { CurrencyChangeButtonContainer } from './style';
 import { useRecoilState } from "recoil";
 import { currencyState } from "../../../states/currencyState";
-
-type Currency = "€" | "$" | "£" | "₺" | "¥";
+import { Currency } from '../../../interfaces/interfaces';
 
 const options: Currency[] = ["€", "$", "£", "₺", "¥"];
 

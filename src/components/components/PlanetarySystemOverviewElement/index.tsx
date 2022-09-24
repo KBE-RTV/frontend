@@ -1,6 +1,6 @@
 import { CelestialBody } from "../../../interfaces/interfaces";
-import { PlanetarySystem } from "../PlaneterySystem"
-import { PlanetarySystemOverviewContainer, PlanetarySystemName, PlanetarySystemGraphicContainer, PlanetarySystemInfoContainer, CelestialBodyName, PlanetarySystemPrice, PlanetarySystemPriceContainer, MoreDetailsButton } from "./style"
+import { PlanetarySystemGraphic } from "../PlaneterySystemGraphic"
+import { PlanetarySystemOverviewContainer, PlanetarySystemName, PlanetarySystemGraphicContainer, PlanetarySystemInfoContainer, PlanetarySystemPrice, PlanetarySystemPriceContainer, MoreDetailsButton } from "./style"
 import { useRecoilState } from "recoil";
 import { currencyState } from "../../../states/currencyState";
 import { useState } from "react";
@@ -13,38 +13,25 @@ interface PlanetarySystemDataOverview {
   }
 
 export const PlanetarySystemOverviewElement = ({ celestialBodies, name, price }: PlanetarySystemDataOverview) => {
-    const [currency, setCurrency] = useRecoilState(currencyState);
+    const [currency] = useRecoilState(currencyState);
     const [showPopup, setShowPopup] = useState(false);
     
-    const getCelestialBodyNames = () => {
-        const celestialBodyNames = [];
-        for (let i = 0; i < celestialBodies.length; i++) {
-          celestialBodyNames.push(celestialBodies[i].name);
-        }
-        return celestialBodyNames;
-    }
-    
-    const celestialBodyNames = getCelestialBodyNames();
-
     return (
         <>
             <PlanetarySystemOverviewContainer>
                 <PlanetarySystemGraphicContainer>
-                    <PlanetarySystem celestialBodies={celestialBodies}/>
+                    <PlanetarySystemGraphic celestialBodies={celestialBodies}/>
                 </PlanetarySystemGraphicContainer>
                 <PlanetarySystemInfoContainer>
                     <PlanetarySystemName>{name}</PlanetarySystemName>
-                    {celestialBodyNames.map(celestialBody => (
-                        <CelestialBodyName>{celestialBody}</CelestialBodyName>
-                    ))}
+                    <MoreDetailsButton onClick={() => setShowPopup(true)}>Learn more</MoreDetailsButton>
                     <PlanetarySystemPriceContainer>
                         <PlanetarySystemPrice>{price}</PlanetarySystemPrice><PlanetarySystemPrice>{currency}</PlanetarySystemPrice>
                     </PlanetarySystemPriceContainer>
                 </PlanetarySystemInfoContainer>
-                <MoreDetailsButton onClick={() => setShowPopup(true)}>+</MoreDetailsButton>
             </PlanetarySystemOverviewContainer>
             {showPopup &&
-                <PlanetarySystemDetailPopup closePopup={() => setShowPopup(false)}/>
+                <PlanetarySystemDetailPopup closePopup={() => setShowPopup(false)} currency={currency} />
             }
         </>
     );
