@@ -8,6 +8,7 @@ import { HomePage } from "./components/pages/homePage";
 import { PlanetsPage } from "./components/pages/planetsPage";
 import { CelestialBodiesPage } from "./components/pages/celestialbodiesPage";
 import { RecoilRoot } from "recoil";
+import { CreatePage } from "./components/pages/createPage";
 
 function App() {
   return (
@@ -20,7 +21,8 @@ function App() {
             <Routes>
               <Route path="/" element={HomePage()} />
               <Route path="/celestialbodies" element={CelestialBodiesPage()} />
-              <Route path="/planets" element={PlanetsPage()} />
+              <Route path="/planetarysystems" element={PlanetsPage()} />
+              <Route path="/create" element={CreatePage()} />
             </Routes>
           </div>
         </div>

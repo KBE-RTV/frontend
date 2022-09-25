@@ -24,6 +24,7 @@ export const HeaderLink = styled(NavLink)`
   font-weight: bolder;
   text-decoration: none;
   padding-right: 3em;
+  text-transform: uppercase;
 
   &:hover {
     text-decoration: underline;
@@ -37,6 +38,23 @@ export const HeaderLink = styled(NavLink)`
     text-decoration-thickness: 0.09em;
     text-underline-offset: 8px;
     text-decoration-color: #3A7FBE;
+  }
+`;
+
+export const CreateLink = styled(NavLink)`
+  color: white;
+  border-radius: 15px;
+  font-size: 15px;
+  background: #1565c0;
+  margin: 20px 20px 20px 4px;
+  padding: 5px 10px;
+  cursor: pointer;
+  text-transform: uppercase;
+  text-decoration: none;
+  width: 100px;
+
+  &:hover {
+    font-weight: bold;
   }
 `;
 
