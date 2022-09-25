@@ -6,7 +6,7 @@ import { PlanetarySystemGraphic } from "../../components/PlaneterySystemGraphic"
 
 export const HomePage = () => {
   
-  const celestialBodies = [{"name":"Sun"},{"name":"Mercury"},{"name":"Venus"},{"name":"Earth"},{"name":"Mars"},{"name":"Jupiter"},{"name":"Saturn"},{"name":"Uranus"},{"name":"Neptune"}];
+  const celestialBodies = [{"name":"Sun","id":"","price":1,"type":""},{"name":"Mercury","id":"","price":1,"type":""},{"name":"Venus","id":"","price":1,"type":""},{"name":"Earth","id":"","price":1,"type":""},{"name":"Mars","id":"","price":1,"type":""},{"name":"Jupiter","id":"","price":1,"type":""},{"name":"Saturn","id":"","price":1,"type":""},{"name":"Uranus","id":"","price":1,"type":""},{"name":"Neptune","id":"","price":1,"type":""}];
   
   return (
     <HomePageContent>

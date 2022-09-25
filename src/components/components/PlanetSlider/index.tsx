@@ -1,7 +1,7 @@
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import { PlanetImg, SliderWrapper } from "./styles";
+import { CelestialBodyImg, SliderWrapper } from "./styles";
 
 import earth from "../../../assets/earth.png";
 import jupiter from "../../../assets/jupiter.png";
@@ -12,6 +12,7 @@ import pluto from "../../../assets/pluto.png";
 import saturn from "../../../assets/saturn.png";
 import uranus from "../../../assets/uranus.png";
 import venus from "../../../assets/venus.png";
+import { CelestialBodyImage } from "../CelestialBodyImage";
 
 export const PlanetSlider = () => {
   const slidersettings = {
@@ -25,31 +26,31 @@ export const PlanetSlider = () => {
     <SliderWrapper>
       <Slider {...slidersettings}>
         <div>
-          <PlanetImg src={earth} />
+          <CelestialBodyImage name="Earth" />
         </div>
         <div>
-          <PlanetImg src={jupiter} />
+          <CelestialBodyImg src={jupiter} />
         </div>
         <div>
-          <PlanetImg src={mars} />
+          <CelestialBodyImg src={mars} />
         </div>
         <div>
-          <PlanetImg src={mercury} />
+          <CelestialBodyImg src={mercury} />
         </div>
         <div>
-          <PlanetImg src={neptune} />
+          <CelestialBodyImg src={neptune} />
         </div>
         <div>
-          <PlanetImg src={pluto} />
+          <CelestialBodyImg src={pluto} />
         </div>
         <div>
-          <PlanetImg src={saturn} />
+          <CelestialBodyImg src={saturn} />
         </div>
         <div>
-          <PlanetImg src={uranus} />
+          <CelestialBodyImg src={uranus} />
         </div>
         <div>
-          <PlanetImg src={venus} />
+          <CelestialBodyImg src={venus} />
         </div>
       </Slider>
     </SliderWrapper>

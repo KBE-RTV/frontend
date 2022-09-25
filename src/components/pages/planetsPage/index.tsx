@@ -1,6 +1,5 @@
-import { HomePageContent, ProductContainer } from "./style";
+import { HomePageContent, ContentContainer } from "./style";
 import { useEffect, useState } from "react";
-import { getPlanetarySystems } from "../../../services/apicalls";
 import { PlanetarySystem } from "../../../interfaces/interfaces";
 import { PlanetarySystemOverviewElement } from "../../components/PlanetarySystemOverviewElement";
 import { useRecoilValue } from "recoil";
@@ -11,7 +10,7 @@ import { planetarySystemCallState } from "../../../states/planetarySystemCallSta
 export const PlanetsPage = () => {
 
   const currencyAsText = useRecoilValue(currencyStateSelector);
-  const [planetarySystemCall, setPlanetarySystemCall] = useRecoilState(planetarySystemCallState);
+  const [planetarySystemCall] = useRecoilState(planetarySystemCallState);
   const [planetarySystems, setPlanetarySystems] = useState<PlanetarySystem[]>([]);
 
   useEffect(() => {
@@ -29,11 +28,11 @@ export const PlanetsPage = () => {
 
     return (
     <HomePageContent>
-      <ProductContainer>
+      <ContentContainer>
         {planetarySystems.map((item, index) => (
-          <PlanetarySystemOverviewElement celestialBodies={item.celestialBodies} name={item.name} price={item.price} key={index}/>
+          <PlanetarySystemOverviewElement celestialBodies={item.celestialBodies} name={item.name} price={item.price} id={item.id} key={index}/>
         ))}
-      </ProductContainer>
+      </ContentContainer>
     </HomePageContent>
   );
 };

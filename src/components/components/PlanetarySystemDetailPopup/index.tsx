@@ -5,13 +5,14 @@ import { currencyStateSelector } from "../../../states/currencyState";
 import { PlanetarySystemGraphic } from "../PlaneterySystemGraphic";
 import { CelestialBodyName, CloseButton, PlanetarySystemDetails, PlanetarySystemGraphicContainer, PlanetarySystemName, PlanetarySystemPrice, PlanetarySystemPriceContainer, PopupContainer, PopupField } from "./style"
 
-interface ProductDetailData {
+interface PlanetarySystemDetailData {
     closePopup: () => void;
     currency: Currency;
+    id: string;
 }
 
-export const PlanetarySystemDetailPopup = ({closePopup, currency}: ProductDetailData) => {
-    const [planetarySystem, setPlanetarySystem] = useState<PlanetarySystem>({name: "Information loading", celestialBodies: [], id: "random", owner: "random", price: 123 });
+export const PlanetarySystemDetailPopup = ({closePopup, currency, id}: PlanetarySystemDetailData) => {
+    const [planetarySystem, setPlanetarySystem] = useState<PlanetarySystem>({name: "Information loading", celestialBodies: [], id: "Information loading", owner: "Information loading", price: 1 });
     const currencyAsText = useRecoilValue(currencyStateSelector);
 
     const getCelestialBodyNames = () => {
@@ -21,7 +22,7 @@ export const PlanetarySystemDetailPopup = ({closePopup, currency}: ProductDetail
         }
         return celestialBodyNames;
     }
-
+    /*TODO: id in die url einpflegen für die Detail Abfrage!*/
     useEffect(() => {
         fetch(`/getdetailproducttest/${currencyAsText}`, {
             method: 'GET',

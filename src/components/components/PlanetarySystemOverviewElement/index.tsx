@@ -10,9 +10,10 @@ interface PlanetarySystemDataOverview {
     celestialBodies: CelestialBody[];
     name: string;
     price: number;
+    id: string;
   }
 
-export const PlanetarySystemOverviewElement = ({ celestialBodies, name, price }: PlanetarySystemDataOverview) => {
+export const PlanetarySystemOverviewElement = ({ celestialBodies, name, price, id }: PlanetarySystemDataOverview) => {
     const [currency] = useRecoilState(currencyState);
     const [showPopup, setShowPopup] = useState(false);
     
@@ -31,7 +32,7 @@ export const PlanetarySystemOverviewElement = ({ celestialBodies, name, price }:
                 </PlanetarySystemInfoContainer>
             </PlanetarySystemOverviewContainer>
             {showPopup &&
-                <PlanetarySystemDetailPopup closePopup={() => setShowPopup(false)} currency={currency} />
+                <PlanetarySystemDetailPopup closePopup={() => setShowPopup(false)} currency={currency} id={id} />
             }
         </>
     );
