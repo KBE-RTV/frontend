@@ -24,7 +24,7 @@ export const HomePageContent = styled.div`
 `;
 
 export const IntroContainer = styled.div`
-  padding-left: 50px;
+  padding-left: 8%;
   margin-top: auto;
   display: flex;
   justify-content: flex-start;

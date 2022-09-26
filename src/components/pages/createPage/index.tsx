@@ -1,29 +1,31 @@
 import { CelestialBodyContainer, ContentContainer, CreateButton, HomePageContent, NameInputField, NameInputLabel, PlanetarySystemGraphicContainer, RightColumnContainer } from "./style";
 import { useEffect, useState } from "react";
-import { CelestialBody } from "../../../interfaces/interfaces";
+import { CelestialBody, PlanetarySystem } from "../../../interfaces/interfaces";
 import { useRecoilState, useRecoilValue } from "recoil";
 import { currencyStateSelector } from "../../../states/currencyState";
 import { celestialBodyCallState } from "../../../states/celestialBodyCallState";
 import { CelestialBodyCheckbox } from "../../components/CelestialBodyCheckbox";
 import { PlanetarySystemGraphic } from "../../components/PlaneterySystemGraphic";
-import { getTablePaginationUnstyledUtilityClass } from "@mui/base";
 
 export const CreatePage = () => {
   
   const currencyAsText = useRecoilValue(currencyStateSelector);
-  const [celestialBodyCall] = useRecoilState(celestialBodyCallState);
+  const [celestialBodyCall, setCelestialBodyCall] = useRecoilState(celestialBodyCallState);
   const [celestialBodies, setCelestialBodies] = useState<CelestialBody[]>([]);
   const [chosenCelestialBodies, setChosenCelestialBodies] = useState<CelestialBody[]>([]);
   const [planetarySystemName, setPlanetarySystemName] = useState("New Planetary System");
 
   useEffect(() => {
-    fetch(`/getcomponenttest/${currencyAsText}`, {
+    fetch(`/allcomponents/${currencyAsText}`, {
       method: 'GET',
     })
       .then(res => res.json())
       .then(
         (result) => {
-          setCelestialBodies(result.celestialBody);
+          const celestialBodiesWithoutSun = result.celestialBody.slice(1);
+          setCelestialBodies(celestialBodiesWithoutSun);
+          console.log("sliced", celestialBodiesWithoutSun);
+          setChosenCelestialBodies([result.celestialBody[0]]);
           console.log("all components", result.celestialBody);
         },
       )
@@ -45,7 +47,7 @@ export const CreatePage = () => {
       body: JSON.stringify(planetarySystemObject),
     })
       .then(res => res.json())
-    setChosenCelestialBodies([]);
+    setCelestialBodyCall(!celestialBodyCall);
     setPlanetarySystemName("New Planetary System");
     console.log("out");
   }

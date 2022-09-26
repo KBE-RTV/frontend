@@ -58,6 +58,26 @@ export const CreateLink = styled(NavLink)`
   }
 `;
 
+export const LoginButton = styled.button`
+  color: white;
+  border-radius: 15px;
+  font-size: 15px;
+  background: #1565c0;
+  margin: 20px 20px 20px 4px;
+  padding: 5px 10px;
+  cursor: pointer;
+  text-transform: uppercase;
+  text-decoration: none;
+  width: 100px;
+  height: 30px;
+  border: none;
+  align-self: center;
+
+  &:hover {
+    font-weight: bold;
+  }
+`;
+
 export const LogoLink = styled(NavLink)`
   display: flex;
   justify-content: center;

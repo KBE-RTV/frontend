@@ -24,7 +24,7 @@ export const PlanetarySystemDetailPopup = ({closePopup, currency, id}: Planetary
     }
     /*TODO: id in die url einpflegen für die Detail Abfrage!*/
     useEffect(() => {
-        fetch(`/getdetailproducttest/${currencyAsText}`, {
+        fetch(`/detailproduct/${id}/${currencyAsText}`, {
             method: 'GET',
           })
             .then(res => res.json())

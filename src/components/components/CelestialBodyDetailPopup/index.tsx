@@ -36,7 +36,7 @@ export const CelestialBodyDetailPopup = ({closePopup, currency, id}: CelestialBo
 
     /*TODO: id in die url einpflegen für die Detail Abfrage!*/
     useEffect(() => {
-        fetch(`/getdetailcomponenttest/${currencyAsText}`, {
+        fetch(`/detailcomponent/${id}/${currencyAsText}`, {
             method: 'GET',
           })
             .then(res => res.json())

@@ -18,7 +18,7 @@ export const HomePage = () => {
       <BackgroundImageWrapper url={startpageintro}>
         <IntroContainer>
           <IntroTitle>Choose your favorite Celestial Bodies and create your own Planetary System</IntroTitle>
-          <NavButton to="/">Create</NavButton>
+          <NavButton to="/create">Create</NavButton>
         </IntroContainer>
       </BackgroundImageWrapper>
       <BackgroundImageWrapper url={startpageintroCelestialBodies}>

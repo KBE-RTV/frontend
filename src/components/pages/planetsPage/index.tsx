@@ -14,7 +14,7 @@ export const PlanetsPage = () => {
   const [planetarySystems, setPlanetarySystems] = useState<PlanetarySystem[]>([]);
 
   useEffect(() => {
-    fetch(`/getproducttest/${currencyAsText}`, {
+    fetch(`/allproducts/${currencyAsText}`, {
       method: 'GET',
     })
       .then(res => res.json())
@@ -26,7 +26,7 @@ export const PlanetsPage = () => {
       )
   }, [currencyAsText, planetarySystemCall]);
 
-    return (
+  return (
     <HomePageContent>
       <ContentContainer>
         {planetarySystems.map((item, index) => (

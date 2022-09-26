@@ -1,5 +1,6 @@
 import { CelestialBodyImg } from "./style"
 
+import sun from "../../../assets/sun.png";
 import earth from "../../../assets/earth.png";
 import jupiter from "../../../assets/jupiter.png";
 import mars from "../../../assets/mars.png";
@@ -14,8 +15,8 @@ interface CelestialBodyImageData {
     name: string;
 }
 
-const celestialBodyImageSources = [mercury, venus, earth, mars, jupiter, saturn, uranus, neptune, pluto];
-const celestialBodyNames = ["Mercury", "Venus", "Earth", "Mars", "Jupiter", "Saturn", "Uranus", "Neptune", "Pluto"];
+const celestialBodyImageSources = [sun, mercury, venus, earth, mars, jupiter, saturn, uranus, neptune, pluto];
+const celestialBodyNames = ["Sun", "Mercury", "Venus", "Earth", "Mars", "Jupiter", "Saturn", "Uranus", "Neptune", "Pluto"];
 
 export const CelestialBodyImage = ({ name }: CelestialBodyImageData) => {
 

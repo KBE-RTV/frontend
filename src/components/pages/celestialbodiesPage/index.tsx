@@ -13,7 +13,7 @@ export const CelestialBodiesPage = () => {
   const [celestialBodies, setCelestialBodies] = useState<CelestialBody[]>([]);
 
   useEffect(() => {
-    fetch(`/getcomponenttest/${currencyAsText}`, {
+    fetch(`/allcomponents/${currencyAsText}`, {
       method: 'GET',
     })
       .then(res => res.json())
