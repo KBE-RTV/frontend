@@ -1,3 +1,21 @@
+# Edge Api
+
+## General information: How to get the entire Microservice project started
+To get the whole application started, Docker needs to be installed.
+After cloning the sub-repositories and opening terminals in each of the projects, run 
+```
+docker-compose up --build
+```
+to get the services started.
+This has to be done in the following order:
+1. Warehouse
+2. Rabbit MQ
+3. Price Service
+4. Product Service
+5. Currency Service
+6. Gateway
+7. Frontend
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
