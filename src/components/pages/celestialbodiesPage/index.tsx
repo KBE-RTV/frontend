@@ -29,7 +29,6 @@ export const CelestialBodiesPage = () => {
       .then(
         (result) => {
           setCelestialBodies(result.celestialBody);
-          console.log("all components", result.celestialBody);
         },
       )
   }, [currencyAsText, celestialBodyCall, keycloak.authenticated]);

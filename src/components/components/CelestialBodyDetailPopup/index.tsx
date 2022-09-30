@@ -34,7 +34,6 @@ export const CelestialBodyDetailPopup = ({closePopup, currency, id}: CelestialBo
 
     const currencyAsText = useRecoilValue(currencyStateSelector);
 
-    /*TODO: id in die url einpflegen für die Detail Abfrage!*/
     useEffect(() => {
         fetch(`/detailcomponent/${id}/${currencyAsText}`, {
             method: 'GET',
@@ -43,7 +42,6 @@ export const CelestialBodyDetailPopup = ({closePopup, currency, id}: CelestialBo
             .then(
                 (result) => {
                 setCelestialBody(result.celestialBody[0])
-                console.log("detail component", result);
               },
             )
       }, []);

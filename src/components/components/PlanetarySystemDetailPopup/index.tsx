@@ -22,7 +22,7 @@ export const PlanetarySystemDetailPopup = ({closePopup, currency, id}: Planetary
         }
         return celestialBodyNames;
     }
-    /*TODO: id in die url einpflegen für die Detail Abfrage!*/
+
     useEffect(() => {
         fetch(`/detailproduct/${id}/${currencyAsText}`, {
             method: 'GET',
@@ -31,7 +31,6 @@ export const PlanetarySystemDetailPopup = ({closePopup, currency, id}: Planetary
             .then(
                 (result) => {
                 setPlanetarySystem(result.planetarySystems[0])
-                console.log("detail", result);
               },
             )
       }, []);

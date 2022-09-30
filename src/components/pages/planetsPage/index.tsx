@@ -30,7 +30,6 @@ export const PlanetsPage = () => {
       .then(
         (result) => {
           setPlanetarySystems(result.planetarySystems);
-          console.log("all planetary systems", result);
         },
       )
   }, [currencyAsText, planetarySystemCall, keycloak.authenticated]);

@@ -14,10 +14,6 @@ const PrivateRoute = ({ children }: any) => {
     keycloak.login();
  }
 
- // TODO: Remove me
- console.log(keycloak.token);
- 
-
  return children;
 };
 

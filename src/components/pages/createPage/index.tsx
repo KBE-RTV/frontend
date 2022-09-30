@@ -34,23 +34,19 @@ export const CreatePage = () => {
         (result) => {
           const celestialBodiesWithoutSun = result.celestialBody.slice(1);
           setCelestialBodies(celestialBodiesWithoutSun);
-          console.log("sliced", celestialBodiesWithoutSun);
           setChosenCelestialBodies([result.celestialBody[0]]);
-          console.log("all components", result.celestialBody);
         },
       )
   }, [currencyAsText, celestialBodyCall, keycloak.authenticated]);
 
   const handleNameChange = (event:any) => {
     setPlanetarySystemName(event.target.value);
-    console.log(event.target.value);
   }
 
   const sendCreatedPlanetarySystemToBackend = () => {
     if (!keycloak.authenticated) {
       return;
     }
-    console.log("in");
     const planetarySystemObject = {
       name: planetarySystemName,
       celestialBodies: chosenCelestialBodies,

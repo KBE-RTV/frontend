@@ -2,13 +2,6 @@ import { CelestialBodyFacts } from "../../../interfaces/interfaces";
 import { CelestialBodyDetailProperty, CelestialBodyDetailRow, CelestialBodyDetailValue } from "./style";
 
 export const CelestialBodyDetailTable = ({ gravity, mass, orbital, orbitalVelocity, radius, rotationVelocity, surfaceTemperature, volume }: CelestialBodyFacts) => {
-    /*TODO: Einheiten hinzufügen!
-    radius: km
-volume: km^3
-mass: kg
-rotationVelocity: km/s
-orbitalVelocity: km/s
-surfaceTemperature: K*/
 
     return (
         <>
