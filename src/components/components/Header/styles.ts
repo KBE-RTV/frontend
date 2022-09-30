@@ -11,10 +11,12 @@ export const HeaderWrapper = styled(Grid)`
   position: fixed;
   width: 100%;
   padding-left: 10%;
+  padding-right: 10%;
+  justify-content: space-between;
 `;
 
 export const Links = styled(Grid)`
-  padding: 1.5em 0 1.3em 5em;
+  padding: 1.5em 0 1.3em 1.5em;
 `;
 
 export const HeaderLink = styled(NavLink)`
@@ -22,6 +24,7 @@ export const HeaderLink = styled(NavLink)`
   font-weight: bolder;
   text-decoration: none;
   padding-right: 3em;
+  text-transform: uppercase;
 
   &:hover {
     text-decoration: underline;
@@ -30,10 +33,48 @@ export const HeaderLink = styled(NavLink)`
     text-decoration-color: #3A7FBE;
   }
 
-  &:active {
+  &[class*="active"] {
     text-decoration: underline;
     text-decoration-thickness: 0.09em;
     text-underline-offset: 8px;
+    text-decoration-color: #3A7FBE;
+  }
+`;
+
+export const CreateLink = styled(NavLink)`
+  color: white;
+  border-radius: 15px;
+  font-size: 15px;
+  background: #1565c0;
+  margin: 20px 20px 20px 4px;
+  padding: 5px 10px;
+  cursor: pointer;
+  text-transform: uppercase;
+  text-decoration: none;
+  width: 100px;
+
+  &:hover {
+    font-weight: bold;
+  }
+`;
+
+export const LoginButton = styled.button`
+  color: white;
+  border-radius: 15px;
+  font-size: 15px;
+  background: #1565c0;
+  margin: 20px 20px 20px 4px;
+  padding: 5px 10px;
+  cursor: pointer;
+  text-transform: uppercase;
+  text-decoration: none;
+  width: 100px;
+  height: 30px;
+  border: none;
+  align-self: center;
+
+  &:hover {
+    font-weight: bold;
   }
 `;
 
@@ -44,6 +85,6 @@ export const LogoLink = styled(NavLink)`
 `;
 
 export const Logo = styled.img`
-  height: 40px;
+  height: 30px;
   width: auto;
 `;

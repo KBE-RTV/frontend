@@ -6,10 +6,3 @@ export const CelestialBodyImg = styled.img`
   margin-left: auto;
   margin-right: auto;
 `;
-
-export const SliderWrapper = styled.div`
-  width: 80vw;
-  margin-left: auto;
-  margin-right: auto;
-  margin-top: auto;
-`;

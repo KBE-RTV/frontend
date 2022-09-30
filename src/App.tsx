@@ -5,37 +5,43 @@ import { BrowserRouter as Router, Route, Routes } from "react-router-dom"
 import { Header } from "./components/components/Header";
 import { BrowserRouter } from "react-router-dom";
 import { HomePage } from "./components/pages/homePage";
+import { PlanetsPage } from "./components/pages/planetsPage";
+import { CelestialBodiesPage } from "./components/pages/celestialbodiesPage";
+import { RecoilRoot } from "recoil";
+import { CreatePage } from "./components/pages/createPage";
+import { ReactKeycloakProvider } from "@react-keycloak/web";
+import keycloak from "./keycloak";
+import PrivateRoute from "./helpers/PrivateRoute";
 
 function App() {
   return (
-    <Router>
-      <div className="App">
-        <Header />
-        <div className="content">
-          <Routes>
-            <Route path="/" element={HomePage()} />
-          </Routes>
+    <ReactKeycloakProvider authClient={keycloak}>
+      <Router>
+        <div className="App">
+          <div style={{display: "block"}}>
+            <Header />
+          </div>
+          <div className="content">
+            <Routes>
+              <Route path="/" element={HomePage()} />
+              <Route path="/celestialbodies" element={
+                <PrivateRoute>
+                  <CelestialBodiesPage />
+                </PrivateRoute>} />
+              <Route path="/planetarysystems" element={
+                <PrivateRoute>
+                  <PlanetsPage/>
+                </PrivateRoute>
+                } />
+              <Route path="/create" element={
+                <PrivateRoute>
+                  <CreatePage/>
+                </PrivateRoute>} />
+            </Routes>
+          </div>
         </div>
-      </div>
-    </Router>
-    /*
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-    */
+      </Router>
+    </ReactKeycloakProvider>
   );
 }
 
