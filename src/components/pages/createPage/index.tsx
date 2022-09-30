@@ -6,6 +6,8 @@ import { currencyStateSelector } from "../../../states/currencyState";
 import { celestialBodyCallState } from "../../../states/celestialBodyCallState";
 import { CelestialBodyCheckbox } from "../../components/CelestialBodyCheckbox";
 import { PlanetarySystemGraphic } from "../../components/PlaneterySystemGraphic";
+import { useKeycloak } from "@react-keycloak/web";
+import { redirect } from 'react-router-dom';
 
 export const CreatePage = () => {
   
@@ -15,9 +17,17 @@ export const CreatePage = () => {
   const [chosenCelestialBodies, setChosenCelestialBodies] = useState<CelestialBody[]>([]);
   const [planetarySystemName, setPlanetarySystemName] = useState("New Planetary System");
 
+  const { keycloak } = useKeycloak();
+
   useEffect(() => {
+    if (!keycloak.authenticated) {
+      return;
+    }
     fetch(`/allcomponents/${currencyAsText}`, {
       method: 'GET',
+      headers: {
+        Authorization: 'Bearer ' + keycloak.token
+      }
     })
       .then(res => res.json())
       .then(
@@ -29,7 +39,7 @@ export const CreatePage = () => {
           console.log("all components", result.celestialBody);
         },
       )
-  }, [currencyAsText, celestialBodyCall]);
+  }, [currencyAsText, celestialBodyCall, keycloak.authenticated]);
 
   const handleNameChange = (event:any) => {
     setPlanetarySystemName(event.target.value);
@@ -37,6 +47,9 @@ export const CreatePage = () => {
   }
 
   const sendCreatedPlanetarySystemToBackend = () => {
+    if (!keycloak.authenticated) {
+      return;
+    }
     console.log("in");
     const planetarySystemObject = {
       name: planetarySystemName,
@@ -44,12 +57,15 @@ export const CreatePage = () => {
     }
     fetch('/createproduct', {
       method: 'POST',
+      headers: {
+        Authorization: 'Bearer ' + keycloak.token
+      },
       body: JSON.stringify(planetarySystemObject),
     })
       .then(res => res.json())
     setCelestialBodyCall(!celestialBodyCall);
     setPlanetarySystemName("New Planetary System");
-    console.log("out");
+    redirect("/create");
   }
 
   return (

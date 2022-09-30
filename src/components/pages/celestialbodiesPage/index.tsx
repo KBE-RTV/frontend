@@ -5,6 +5,7 @@ import { useRecoilState, useRecoilValue } from "recoil";
 import { currencyStateSelector } from "../../../states/currencyState";
 import { celestialBodyCallState } from "../../../states/celestialBodyCallState";
 import { CelestialBodyOverviewElement } from "../../components/CelestialBodyOverviewElement";
+import { useKeycloak } from "@react-keycloak/web";
 
 export const CelestialBodiesPage = () => {
   
@@ -12,9 +13,17 @@ export const CelestialBodiesPage = () => {
   const [celestialBodyCall] = useRecoilState(celestialBodyCallState);
   const [celestialBodies, setCelestialBodies] = useState<CelestialBody[]>([]);
 
+  const { keycloak } = useKeycloak();
+
   useEffect(() => {
+    if (!keycloak.authenticated) {
+      return;
+    }
     fetch(`/allcomponents/${currencyAsText}`, {
       method: 'GET',
+      headers: {
+        Authorization: 'Bearer ' + keycloak.token
+      }
     })
       .then(res => res.json())
       .then(
@@ -23,7 +32,7 @@ export const CelestialBodiesPage = () => {
           console.log("all components", result.celestialBody);
         },
       )
-  }, [currencyAsText, celestialBodyCall]);
+  }, [currencyAsText, celestialBodyCall, keycloak.authenticated]);
 
   return (
     <HomePageContent>

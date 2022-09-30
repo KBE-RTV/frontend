@@ -6,6 +6,7 @@ import { useRecoilValue } from "recoil";
 import { useRecoilState } from "recoil";
 import { currencyStateSelector } from "../../../states/currencyState";
 import { planetarySystemCallState } from "../../../states/planetarySystemCallState";
+import { useKeycloak } from "@react-keycloak/web";
 
 export const PlanetsPage = () => {
 
@@ -13,9 +14,17 @@ export const PlanetsPage = () => {
   const [planetarySystemCall] = useRecoilState(planetarySystemCallState);
   const [planetarySystems, setPlanetarySystems] = useState<PlanetarySystem[]>([]);
 
+  const { keycloak } = useKeycloak();
+  
   useEffect(() => {
+    if (!keycloak.authenticated) {
+      return;
+    }
     fetch(`/allproducts/${currencyAsText}`, {
       method: 'GET',
+      headers: {
+        Authorization: 'Bearer ' + keycloak.token
+      }
     })
       .then(res => res.json())
       .then(
@@ -24,7 +33,7 @@ export const PlanetsPage = () => {
           console.log("all planetary systems", result);
         },
       )
-  }, [currencyAsText, planetarySystemCall]);
+  }, [currencyAsText, planetarySystemCall, keycloak.authenticated]);
 
   return (
     <HomePageContent>

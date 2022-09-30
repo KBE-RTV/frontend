@@ -9,7 +9,7 @@ import { useKeycloak } from "@react-keycloak/web";
 export const Header = () => {
   const [planetarySystemCall, setPlanetarySystemCall] = useRecoilState(planetarySystemCallState);
   const [celestialBodyCall, setCelestialBodyCall] = useRecoilState(celestialBodyCallState);
-  const { keycloak, initialized } = useKeycloak();
+  const { keycloak } = useKeycloak();
 
   return (
     <HeaderWrapper>
@@ -33,7 +33,9 @@ export const Header = () => {
       {keycloak.authenticated && (
         <LoginButton
           type="button"
-          onClick={() => keycloak.logout()}
+          onClick={() => keycloak.logout({
+            redirectUri: window.location.origin + '/'
+          })}
         >
           Logout
         </LoginButton>

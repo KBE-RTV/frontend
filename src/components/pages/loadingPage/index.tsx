@@ -2,12 +2,12 @@ import { BackgroundImageWrapper, HomePageContent, PleaseLoginTitle, RocketImg } 
 import startpageintroCelestialBodies from "../../../assets/StartpageIntroComponents.png";
 import rocket from "../../../assets/rocket.png";
 
-export const PleaseLoginPage = () => {
+export const LoadingPage = () => {
 
   return (
     <HomePageContent>
       <BackgroundImageWrapper url={startpageintroCelestialBodies}>
-        <PleaseLoginTitle>Please log in first</PleaseLoginTitle>
+        <PleaseLoginTitle>Loading...</PleaseLoginTitle>
         <RocketImg src={rocket}/>
       </BackgroundImageWrapper>
     </HomePageContent>

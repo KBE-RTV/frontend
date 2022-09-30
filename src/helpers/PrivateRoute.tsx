@@ -1,12 +1,24 @@
 import { useKeycloak } from "@react-keycloak/web";
-import { PleaseLoginPage } from "../components/pages/pleaseLoginPage";
+import { LoadingPage } from "../components/pages/loadingPage";
 
 const PrivateRoute = ({ children }: any) => {
- const { keycloak } = useKeycloak();
+ const { keycloak, initialized } = useKeycloak();
 
  const isLoggedIn = keycloak.authenticated;
 
- return isLoggedIn ? children : <PleaseLoginPage />;
+ if (!initialized) {
+    return <LoadingPage/>;
+ }
+
+ if (!isLoggedIn){
+    keycloak.login();
+ }
+
+ // TODO: Remove me
+ console.log(keycloak.token);
+ 
+
+ return children;
 };
 
 export default PrivateRoute;

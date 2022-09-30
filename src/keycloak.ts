@@ -4,8 +4,8 @@ import Keycloak from 'keycloak-js'
 // Pass initialization options as required or leave blank to load from 'keycloak.json'
 const keycloak = new Keycloak({
     realm: "KBERTV",
-    url: "http://localhost:8080/",
-    clientId: "kbertv",
+    url: "http://keycloak:8080",
+    clientId: "kbertv-frontend",
   })
 
-export default keycloak
+export default keycloak;
